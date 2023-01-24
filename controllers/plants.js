@@ -7,7 +7,9 @@ module.exports = {
 }
 
 function index(req, res) {
-
+    res.render('plants/index', {
+        
+    })
 }
 
 function newPlant(req, res) {
@@ -17,3 +19,4 @@ function newPlant(req, res) {
 function create(req, res) {
     
 }
+
