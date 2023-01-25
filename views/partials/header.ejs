@@ -8,6 +8,7 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <nav>
-        <a href="/plants" <%- 'All Plants' ? 'class="active"' : '' %>>All Plants</a>
-    </nav>
+  <nav>
+      <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+      <a href="/plants/new" <%- title === 'Add Plant' ? 'class="active"' : '' %>>ADD PLANT</a>
+      <a href="/plants" <%- title === 'All Plants' ? 'class="active"' : '' %>>ALL PLANTS</a>  </nav>

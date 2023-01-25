@@ -1,0 +1,53 @@
+<%- include('../partials/header') %>
+
+<h2>Add a New Plant</h2>
+<form action="/plants" method="POST">
+  <label>Name:
+    <input type="text" name="name">
+  </label><br>
+  <label>Type: 
+    <select name="type">
+        <option value="Climbers">Climbers</option>
+        <option value="Creeppers">Creeppers</option>
+        <option value="Herbs">Herbs</option>
+        <option value="Trees">Trees</option>
+        <option value="Shrubs">Shrubs</option>
+    </select>
+  </label><br>
+  <label>Origin:
+    <select name="origin">
+        <option value="Africa">Africa</option>
+        <option value="Antarctica">Antarctica</option>
+        <option value="Asia">Asia</option>
+        <option value="Australia">Australia</option>
+        <option value="Europe">Europe</option>
+        <option value="northAmerica">North America</option>
+        <option value="southAmerica">South America</option>
+    </select>
+  </label><br>
+  <label>Water Requirement:
+    <select name="waterRequirement">
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Monthly">Monthly</option>
+        <option value="onlyMist">Only Mist</option>
+    </select>
+  </label><br>
+  <label>Sun Requirement:
+    <select name="sunRequirement">
+        <option value="fullSun">Full Sun</option>
+        <option value="partialSun">Partial Sun</option>
+        <option value="noSun">No Sun</option>
+    </select>
+  </label><br>
+  <label>Difficulty of Plant:
+    <select name="difficulty">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+    </select>
+  </label>
+  <button type="submit">Add Plant</button>
+</form>
+
+<%- include('../partials/footer') %>

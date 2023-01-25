@@ -1,12 +1,27 @@
 <%- include('../partials/header') %>
 
-<h2>All Plants</h2>
-<table>
-    <thead>
-        <tr>
-            <th></th>
-        </tr>
-    </thead>
-</table>
-
+<table id="list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Origin</th>
+      <th>Water Requirements</th>
+      <th>Sunlight Requirements</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% plants.forEach(function(p) { %>
+      <tr>
+        <td><%= p.Name %></td>
+        <td><%= p.Type %></td>
+        <td><%= p.waterRequirements %></td>
+        <td><%= p.sunlightRequirements %></td>
+        <td><a href="/plants/<%= p._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
 <%- include('../partials/footer') %>
