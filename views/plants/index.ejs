@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h2>Plant List</h2>
 <table id="list">
   <thead>
     <tr>
@@ -14,14 +15,15 @@
   <tbody>
     <% plants.forEach(function(p) { %>
       <tr>
-        <td><%= p.Name %></td>
-        <td><%= p.Type %></td>
-        <td><%= p.waterRequirements %></td>
-        <td><%= p.sunlightRequirements %></td>
+        <td><%= plant.name %></td>
+        <td><%= plant.type %></td>
+        <td><%= plant.origin %></td>
+        <td><%= plant.waterRequirement %></td>
+        <td><%= plant.sunlightRequirements %></td>
         <td><a href="/plants/<%= p._id %>">DETAILS</a></td>
       </tr>
-      <% }); %>
-    </tbody>
-  </table>
+    <% }); %>
+  </tbody>
+</table>
   
 <%- include('../partials/footer') %>
