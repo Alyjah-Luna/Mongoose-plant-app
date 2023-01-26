@@ -9,12 +9,24 @@
       <th>Origin</th>
       <th>Water Requirements</th>
       <th>Sunlight Requirements</th>
+      <th>Difficulty</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-   
+    <% plants.forEach((p) => { %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.type %></td>
+        <td><%= p.origin %></td>
+        <td><%= p.waterRequirement %></td>
+        <td><%= p.sunRequirement %></td>
+        <td><%= p.difficulty %></td>
+        <td><form action="/plants/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
+          <button type="submit">Delete</button></td>
+      </tr>
+      <% }) %>
   </tbody>
 </table>
-  
+
 <%- include('../partials/footer') %>

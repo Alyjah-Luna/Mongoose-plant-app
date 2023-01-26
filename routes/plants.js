@@ -8,5 +8,6 @@ router.get('/new', ensureLoggedIn, plantsCtrl.new)
 router.get('/:id', ensureLoggedIn, plantsCtrl.show)
 router.post('/', ensureLoggedIn, plantsCtrl.create)
 router.put('/:id', ensureLoggedIn, plantsCtrl.update)
+router.delete('/:id', ensureLoggedIn, plantsCtrl.delete)
 
 module.exports = router;
