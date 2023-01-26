@@ -8,11 +8,11 @@ const plantSchema = new Schema({
     }, 
     type: {
         type: String,
-        enum: ["Climbers", "Creepers", "Herbs", "Shrubs", "Trees"]
+        // enum: ["Climbers", "Creepers", "Herbs", "Shrubs", "Trees"]
     },
     origin: {
         type: String,
-        enum: ["Africa", "Antarctica", "Asia", "Australia", "Europe", "North America", "South America"]
+        // enum: ["Africa", "Antarctica", "Asia", "Australia", "Europe", "North America", "South America"]
     }, 
     waterRequirement: {
         type: String,
@@ -30,4 +30,4 @@ const plantSchema = new Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model("Plant", plantSchema)
+module.exports = mongoose.model('Plant', plantSchema)

@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport')
 
-router.get('/plants', function(req, res, next) {
-  res.render('index', { });
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Home Page' });
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -17,8 +17,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/',
-    failureRedirect: '/'
+    successRedirect: '/plants',
+    failureRedirect: '/plants'
   }
 ))
 
