@@ -43,3 +43,4 @@ This is an Image of a logged in user to add a New Plant.
 <li>Fixing up the styling</li>
 <li>Creating Reminders for watering & fertilizing the plants</li>
 <li>Adding Photos of each plant in the details page</li>
+<li>Fixing the Water & Sunlight requirements which just got messed up during the deployment issue<li>
