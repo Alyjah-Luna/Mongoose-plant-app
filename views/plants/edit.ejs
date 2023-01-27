@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Add a New Plant</h2>
+<h2>Edit Plant</h2>
 <form action="/plants" method="POST">
   <label>Name:
     <input type="text" name="name">
@@ -25,7 +25,7 @@
         <option value="southAmerica">South America</option>
     </select>
   </label><br>
-  <label>Water<br> Requirement:
+  <label>Water Requirement:
     <select name="waterRequirement">
         <option value="Daily">Daily</option>
         <option value="Weekly">Weekly</option>
@@ -33,7 +33,7 @@
         <option value="onlyMist">Only Mist</option>
     </select>
   </label><br>
-  <label>Sun<br> Requirement:
+  <label>Sun Requirement:
     <select name="sunRequirement">
         <option value="fullSun">Full Sun</option>
         <option value="partialSun">Partial Sun</option>

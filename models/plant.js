@@ -8,11 +8,9 @@ const plantSchema = new Schema({
     }, 
     type: {
         type: String,
-        // enum: ["Climbers", "Creepers", "Herbs", "Shrubs", "Trees"]
     },
     origin: {
         type: String,
-        // enum: ["Africa", "Antarctica", "Asia", "Australia", "Europe", "North America", "South America"]
     }, 
     waterRequirement: {
         type: String,

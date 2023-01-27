@@ -61,8 +61,7 @@ nav > a.active {
 }
 
 #new-form *,
-#add-comment-form *,
-#add-performer-form * {
+#add-comment-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;

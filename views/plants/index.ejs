@@ -11,6 +11,7 @@
       <th>Sunlight Requirements</th>
       <th>Difficulty</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +25,8 @@
         <td><%= p.difficulty %></td>
         <td><form action="/plants/<%= p.id %>?_method=DELETE" class="delete-form" method="POST">
           <button type="submit">Delete</button></td>
+        <td><a id="edit-plant" href="/plants/<%= p.id %>/edit">Edit Plant</a></td>
+        <td><a href="/plants/<%= p._id %>">Details</a></td>
       </tr>
       <% }) %>
   </tbody>

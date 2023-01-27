@@ -5,8 +5,9 @@ module.exports = {
     new: newPlant,
     show,
     create,
+    delete: deletePlant,
     update,
-    delete: deletePlant
+    edit
 }
 
 function index(req, res) {
@@ -20,19 +21,6 @@ function newPlant(req, res) {
     res.render('plants/new', { title: 'Add Plant'})
 }
 
-// function create(req, res) {
-//     req.body.comment = !!req.body.comment;
-//     for (let key in req.body) {
-//       if (req.body[key] === "") delete req.body[key];
-//     }
-   
-//     const plant = new Plant(req.body);
-//     plant.save(function (err) {
-//       if (err) return res.redirect("/plants/new");
-//       console.log(plant);
-//       res.redirect(`/plants/${plant._id}`);
-//     });
-//   }
 function show(req, res) {
     Plant.findById(req.params.id, function (err, plant){
       console.log(plant)
@@ -48,6 +36,13 @@ function create(req, res) {
   })
 }
 
+function deletePlant(req, res, next) {
+  Plant.findByIdAndDelete(req.params.id, function (err, plant) {
+    if (err) { return next(err); }
+    res.redirect('/plants');
+  });
+}
+
 function update(req, res, next) {
   const updatedPlant = {
       name: req.body.name,
@@ -61,12 +56,12 @@ function update(req, res, next) {
       if (err) { return next(err); }
       res.redirect(`/plants/${plant._id}`);
   });
-
 }
 
-function deletePlant(req, res, next) {
-  Plant.findByIdAndDelete(req.params.id, function (err, plant) {
+function edit(req, res, next) {
+  Plant.findById(req.params.id, function (err, plant) {
       if (err) { return next(err); }
-      res.redirect('/plants');
+
+      res.render('plants/edit', { plant, title: "Edit" })
   });
 }
