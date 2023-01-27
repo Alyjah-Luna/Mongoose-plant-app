@@ -25,5 +25,3 @@ It's lacking quite some style at the moment but I will work on that, I just want
 <li>Fixing up the styling</li>
 <li>Creating Reminders for watering & fertilizing the plants</li>
 <li>Adding Photos of each plant in the details page</li>
-<li></li>
-<li></li>
