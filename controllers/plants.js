@@ -12,7 +12,7 @@ module.exports = {
 
 function index(req, res) {
     Plant.find({}, function (err, plants) {
-      console.log(plants)
+      // console.log(plants)
       res.render("plants/index", { title: "All Plants", plants })
     });
   }
@@ -23,7 +23,7 @@ function newPlant(req, res) {
 
 function show(req, res) {
     Plant.findById(req.params.id, function (err, plant){
-      console.log(plant)
+      // console.log(plant)
       res.render("plants/show", { title: "Plant Detail", plant });
     })
 };

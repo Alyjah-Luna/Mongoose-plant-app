@@ -1,6 +1,22 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const commentSchema = new Schema({
+    content: {
+        type: String,
+        required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
+    }, {
+    timestamps: true
+})
+
 const plantSchema = new Schema({
     name: {
         type: String,
@@ -14,7 +30,6 @@ const plantSchema = new Schema({
     }, 
     waterRequirement: {
         type: String,
-        required: true
     },
     sunRequirement: {
         type: String,
@@ -23,7 +38,8 @@ const plantSchema = new Schema({
     difficulty: {
         type: String,
         required: true
-    }
+    },
+    comments: [commentSchema]
 }, {
     timestamps: true
 })

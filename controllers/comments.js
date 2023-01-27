@@ -11,8 +11,9 @@ function create(req, res) {
         req.body.user = req.user._id
         req.body.userName = req.user.name
         req.body.userAvatar = req.user.avatar
-
         plant.comments.push(req.body)
+        console.log(req.body)
+        console.log(req.user._id)
         plant.save(function(err) {
             res.redirect(`/plants/${plant._id}`)
         })

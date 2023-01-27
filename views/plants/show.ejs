@@ -2,39 +2,61 @@
 
 <section id="show-page">
   <div>Name: </div>
-  <div><%= plants.name %></div>
+  <div><%= plant.name %></div>
   <div>Type: </div>
   <div><%= plant.type %></div>
   <div>Origin: </div>
   <div><%= plant.origin %></div>
   <div>Water Requirements: </div>
   <div><%= plant.waterRequirements %></div>
+  <div>Sun Requirements: </div>
   <div><%= plant.sunlightRequirements %></div>
 </section>
 <br /><br />
 <h2>Comments</h2>
-<form>
-  id="add-comment-form"
-  method="POST"
-  action="/plants/<%= plant._id %>/comments">
+<% if(user) { %>
+<form id="add-comment-form" method="POST" action="/plants/<%= plant._id %>/comments">
   <label id="com-box"></label>
   <textarea name="content"></textarea>
   <input type="submit" value="Add Comment"/>
 </form>
+<% } %>
+
 
 <% if (plant.comments.length) { %>
-<% plant.comments.forEach(function(c) { %>
-<td class="comment-user">
-  <img id="gpic" alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" /><%=
-  c.userName %>
-</td>
-<td><%= c.createdAt.toLocaleDateString() %></td>
-<td><%= c.content %></td>
-<form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-  <button type="submit">DELETE</button>
-</form>
-<% }); %> 
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% plant.comments.forEach(function(c) { %>
+      <% total += c.difficultyRating %>
+        <tr>
+          <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+          <td><%= c.createdAt.toLocaleDateString() %></td>
+          <td><%= c.content %></td>
+          <td><%= c.difficultyRating %></td>
+          <td>
+            <% if (user?._id.equals(c.user)) { %>
+            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="Medium"></td>
+      </tr>
+    </tbody>
+  </table>
+  
 <% } else { %>
-<h5>No Comments Yet</h5>
+  <h5>No Comments Yet</h5>
+<% } %>
   
 <%- include('../partials/footer') %>
