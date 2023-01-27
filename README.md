@@ -43,7 +43,8 @@ This is an Image of a logged in user to add a New Plant.
 <br>
 
 # Ice Box Features:
-
+  <br>
+  <a href="https://mongoose-plant-app.herokuapp.com/">You can click here to check it out</a>
 <ul>
   <li>Fixing up the styling</li>
   <li>Creating Reminders for watering & fertilizing the plants</li>
